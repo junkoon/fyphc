@@ -1,0 +1,38 @@
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Service Request</ion-title>
+    <ion-buttons right>
+        <button ion-button (click)="addservicerequest()">
+          <ion-icon name='add'></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-refresher (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content refreshingSpinner="circles"></ion-refresher-content>
+    </ion-refresher>
+    
+
+    <ion-list>
+        <ion-item *ngFor="let sr of servicerequest$" (click)="selectServiceRequest(sr)" detail-push>
+          <div>
+          <label>Description :</label> 
+          <h1 float-right>{{sr.status}}</h1> 
+          <p>{{sr.description}}</p>
+          <label>Ref No. :</label> 
+          <p>{{sr.servicerequestid}}</p>
+        </div>
+        </ion-item>
+    
+      </ion-list>
+
+</ion-content>

@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>Patient Info</ion-title>
+    <ion-buttons right>
+        <button ion-button (click)="addpatient()">
+          <ion-icon name='add'></ion-icon>
+        </button>
+      </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+
+
+
+  <ion-list>  
+    <ion-item  *ngFor="let patient of patientref$ " detail-push (click)="selectPatientRecord(patient)">
+      <h1>{{patient.name}}</h1>
+      <h3>{{patient.medicalhistory}}</h3>
+
+    </ion-item>
+
+  </ion-list>
+
+
+</ion-content>

@@ -1,0 +1,20 @@
+accordion {
+
+    .card-header{
+        background: color($colors, light);
+        // background-color: white;
+        // // map-get($colors, primary);
+        color: color($colors, light);
+        height:70px;
+
+        
+    }
+    .card-content {
+        padding: 0px 16px; 
+        max-height: 0px;
+    }
+    
+    .icon{
+        color:black;
+    }
+}

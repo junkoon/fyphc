@@ -1,0 +1,34 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit quotation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+    <ion-item>
+        Ref No: {{quotation.servicerequestid}}
+      </ion-item>
+
+      <ion-item>
+          Service Request: {{ servicerequest.description }}
+      </ion-item>
+  
+    <ion-item>
+        <ion-label floating>Service Scope:</ion-label>
+        <ion-input type="text" [(ngModel)]="quotation.servicescope"></ion-input>
+    </ion-item>
+
+    <ion-item>
+          <ion-label floating>Scope Fee:</ion-label>
+          <ion-input type="number" [(ngModel)]="quotation.fee"></ion-input>
+    </ion-item>
+  </ion-list>
+      <button block clear ion-button (click)="editquotation(quotation)">Save Edit</button>
+      <button block clear ion-button color="danger" (click)="delquotation(quotation)">Delete</button>
+</ion-content>

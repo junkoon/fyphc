@@ -1,0 +1,43 @@
+
+<ion-header>
+
+    <ion-navbar>
+      <ion-title>Add ServiceRequest</ion-title>
+    </ion-navbar>
+  
+  </ion-header>
+  
+  <ion-content padding>
+      <ion-list>
+            
+            <ion-item>
+                    <ion-label floating>Patient</ion-label>
+        
+                    <ion-select [(ngModel)]="ServiceRequest.patientid">
+                            <ion-option *ngFor="let patient of patient$" [value]='patient.patientid'>{{patient.name}}</ion-option>
+                    </ion-select>
+            </ion-item>
+
+
+        <ion-item>
+            <ion-label floating>Description</ion-label>
+            <ion-textarea [(ngModel)]="ServiceRequest.description"></ion-textarea>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label floating>Appointment Date</ion-label>
+            <ion-datetime displayFormat="D MMM YYYY HH:mm" pickerFormat="D MMM YYYY HH:mm"  [(ngModel)]="ServiceRequest.appointmentdatetime" ></ion-datetime>
+        </ion-item>
+
+                
+
+
+
+      </ion-list>
+
+      <button block ion-button (click)="addservicerequest(ServiceRequest)" >Add!</button>
+
+
+  
+  </ion-content>

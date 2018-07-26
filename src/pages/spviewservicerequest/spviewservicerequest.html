@@ -1,0 +1,54 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Service Request</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="welcome">
+
+
+
+
+     
+      <accordion title="Patient Info">  
+
+          <ion-item text-wrap>
+ 
+              
+              <label>Patient :</label> <p>{{ patient.name }}</p>
+              <br>
+              <label>Gender :</label> <p>{{ patient.gender }}</p>
+              <br>
+              <label>Requestor HP / Patient HP :</label> <p>{{user.phone}} / {{ patient.phone }}</p>
+              <label>Medical History:</label><p >{{patient.medicalhistory}}</p>
+              <label>Address:</label><p>{{patient.address}}</p>
+
+          </ion-item> 
+
+      </accordion>
+
+      
+      <accordion title="Service Request">
+
+      <ion-item text-wrap>
+            <label>Reference No:</label> <p>{{ servicerequest.servicerequestid }}</p>
+            <br>
+            <label>Service Request :</label> <p>{{ servicerequest.description }}</p>
+            <br>
+            <label>Appointment Date :</label> <p>{{ servicerequest.appointmentdatetime | date: 'dd/MM/yyyy H:mm'}}</p>
+            <br>
+            <label>Appointment Created :</label> <p>{{ servicerequest.requestdate }}</p>
+      </ion-item>
+
+     </accordion>
+
+              
+
+     <button block clear ion-button (click)="createquote(servicerequest)" >Send Quotation</button>
+
+
+</ion-content>

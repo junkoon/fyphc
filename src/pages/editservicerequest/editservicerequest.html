@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit Service Request</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+            
+        <ion-item>
+            <ion-label floating>Patient</ion-label>
+            <ion-select [(ngModel)]="servicerequest.patientid">
+                    <ion-option *ngFor="let patient of patient$" [value]='patient.patientid'>{{patient.name}}</ion-option>
+            </ion-select>
+        </ion-item>
+
+  
+
+        <ion-item>
+            <ion-label floating>Description</ion-label>
+            <ion-textarea [(ngModel)]="servicerequest.description"></ion-textarea>
+        </ion-item>
+
+
+        <ion-item>
+            <ion-label floating>Appointment Date</ion-label>
+            <ion-datetime displayFormat="D MMM YYYY HH:mm" pickerFormat="D MMM YYYY HH:mm" [(ngModel)]="servicerequest.appointmentdatetime"></ion-datetime>
+        </ion-item>
+
+                
+
+      </ion-list>
+
+      <button block clear ion-button (click)="editservicerequest(servicerequest)" >Save</button>
+
+
+</ion-content>

@@ -1,0 +1,22 @@
+<ion-content padding id="welcome">
+
+  <h1>Welcome to Home Care!</h1>
+<div>Where healthcare is what we care!</div>
+
+<div>
+  <button ion-button block class="marginTop" (click)="signIn()" item-left>Sign In</button>
+  
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6>
+        <button ion-button full color="light" class="registerbuttion" (click)="registerCustomer()" item-left>Register as customer</button>
+      </ion-col>
+      <ion-col col-6>
+        <button ion-button full color="light" class="registerbuttion" (click)="registerSP()" item-left>Register as SP</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+</ion-content>

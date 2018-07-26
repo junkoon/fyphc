@@ -1,0 +1,81 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Quotation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding id="welcome">
+
+    <accordion title="Patient Info">  
+
+        <ion-item text-wrap>
+
+            
+            <label>Patient :</label> <p>{{ patient.name }}</p>
+            <br>
+            <label>Gender :</label> <p>{{ patient.gender }}</p>
+            <br>
+            <!-- <label>Requestor HP / Patient HP :</label> <p>{{user.phone}} / {{ patient.phone }}</p> -->
+            <label>Medical History:</label><p >{{patient.medicalhistory}}</p>
+            <label>Address:</label><p>{{patient.address}}</p>
+
+        </ion-item> 
+
+    </accordion>
+
+    <accordion title="Service Request Details">
+
+        <ion-item text-wrap>
+            <label>Reference No:</label> <p>{{ servicerequest.servicerequestid }}</p>
+            <br>
+            <label>Service Request :</label> <p>{{ servicerequest.description }}</p>
+            <br>
+            <label>Appointment Date :</label> <p>{{ servicerequest.appointmentdatetime | date: 'dd/MM/yyyy H:mm'}}</p>
+            <br>
+            <label>Appointment Created :</label> <p>{{ servicerequest.requestdate }}</p>
+        </ion-item>
+          
+        </accordion>
+        <accordion title="Provider Information">
+
+                <ion-item text-wrap>
+                      <label>Name :</label> <p>{{ sp.name }}</p>
+                      <br>
+                      <label>Phone :</label> <p>{{ sp.phone }}</p>
+                      <br>
+                      <label>Email :</label> <p>{{ sp.email }}</p>
+                      <br>
+                      <label>Gender :</label> <p>{{ sp.gender }}</p>
+                      <br>
+                      <label>Years Of Experience :</label> <p>{{ sp.experience_years }}</p>
+                </ion-item>
+          
+        </accordion>
+
+
+
+        <accordion title="Quotation">
+
+                <ion-item text-wrap>
+                      <label>Service Description :</label> <p>{{ quotation.servicescope }}</p>
+                      <br>
+                      <label>Price :</label> <p>{{ quotation.fee }}</p>
+                      <br>
+                      <label>Status :</label> <p>{{ quotation.status }}</p>
+                      <label >Rating :</label> <p>{{ quotation?.Ratings }}</p>
+                </ion-item>
+          
+        </accordion>
+
+        
+
+  
+  <button block clear ion-button *ngIf="canRead()" (click)="accept(quotation)">Accept</button>
+  <button block clear ion-button *ngIf="canRead()" color="danger" (click)="presentPrompt(quotation)">Decline</button>
+  <button block clear ion-button *ngIf="endreq()"  (click)="endrequest(quotation)">End Service Request</button>
+  
+
+</ion-content>

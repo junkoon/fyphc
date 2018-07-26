@@ -1,0 +1,73 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>SP Registeration</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+        <ion-item>
+          <ion-label floating>Email Address</ion-label>
+          <ion-input type="text" [(ngModel)]="serviceprovider.email"></ion-input>
+        </ion-item>
+      
+        <ion-item>
+          <ion-label floating>Password</ion-label>
+          <ion-input type="password" [(ngModel)]="serviceprovider.password"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Name</ion-label>
+          <ion-input type="text" [(ngModel)]="serviceprovider.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Nric</ion-label>
+          <ion-input type="text" [(ngModel)]="serviceprovider.nric"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Phone</ion-label>
+          <ion-input type="number" [(ngModel)]="serviceprovider.phone"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>Date Of Birth</ion-label>
+          <ion-datetime displayFormat="D MMM YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="serviceprovider.dob"></ion-datetime>
+        </ion-item>
+
+        <ion-item>
+            <ion-label floating>Gender</ion-label>
+            <ion-select [(ngModel)]="serviceprovider.gender">
+              <ion-option value="f">Female</ion-option>
+              <ion-option value="m">Male</ion-option>
+            </ion-select>
+          </ion-item>
+
+        <ion-item>
+          <ion-label floating>Address</ion-label>
+          <ion-textarea [(ngModel)]="serviceprovider.address"></ion-textarea>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Year Of Experience</ion-label>
+          <ion-input type="number" [(ngModel)]="serviceprovider.experience_years"></ion-input>
+        </ion-item>
+        
+        <ion-item>
+          <ion-label floating>Company</ion-label>
+          <ion-input type="text" [(ngModel)]="serviceprovider.company"></ion-input>
+        </ion-item>
+
+      </ion-list>
+
+      <div padding>
+          <button block ion-button (click)="register(serviceprovider)" >Register</button>
+        </div>
+
+</ion-content>

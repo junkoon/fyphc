@@ -1,0 +1,44 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Declined Quotation</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+        <accordion title="Service Request Details">
+
+                <ion-item text-wrap>
+                    <label>Reference No:</label> <p>{{ servicerequest.servicerequestid }}</p>
+                    <br>
+                    <label>Service Request :</label> <p>{{ servicerequest.description }}</p>
+                    <br>
+                    <label>Appointment Date :</label> <p>{{ servicerequest.appointmentdatetime | date: 'dd/MM/yyyy H:mm' }}</p>
+                    <br>
+                    <label>Appointment Created :</label> <p>{{ servicerequest.requestdate }}</p>
+                </ion-item>
+                  
+                </accordion>
+
+                <accordion title="Quotation">
+
+                        <ion-item text-wrap>
+                              <label>Service Description :</label> <p>{{ quotation.servicescope }}</p>
+                              <br>
+                              <label>Price :</label> <p>{{ quotation.fee }}</p>
+                              <br>
+                              <label>Status :</label> <p>{{ quotation.status }}</p>
+                              <label>Reason For Declining:</label> <p>{{quotation.reasonfordeclining}}</p>
+                        </ion-item>
+                  
+                </accordion>
+
+
+    <button block clear ion-button (click)="resent(servicerequest)">Resent</button>
+    <button block clear ion-button color="danger" (click)="presentConfirm(quotation)">Delete</button>
+
+</ion-content>

@@ -1,0 +1,72 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Add Patient</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Name</ion-label>
+        <ion-input type="text" [(ngModel)]="patient.name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Date Of Birth</ion-label>
+          <ion-datetime displayFormat="D MMM YYYY" pickerFormat="D MMM YYYY" [(ngModel)]="patient.dob"></ion-datetime>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Nric</ion-label>
+        <ion-input type="text" [(ngModel)]="patient.nric"></ion-input>
+      </ion-item>
+            
+      <ion-item>
+          <ion-label floating>Medical History</ion-label>
+          <ion-textarea [(ngModel)]="patient.medicalhistory"></ion-textarea>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Annual Income</ion-label>
+          <ion-input type="number" [(ngModel)]="patient.annualincome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Address</ion-label>
+          <ion-textarea [(ngModel)]="patient.address"></ion-textarea>
+      </ion-item>
+      
+      <ion-item>
+          <ion-label floating>Relationship to User</ion-label>
+          <ion-input type="text" [(ngModel)]="patient.relationship"></ion-input>
+        </ion-item>
+
+       
+      <ion-item>
+          <ion-label floating>Postalcode</ion-label>
+          <ion-input type="number" [(ngModel)]="patient.postalcode"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Phone</ion-label>
+        <ion-input type="number" [(ngModel)]="patient.phone"></ion-input>
+      </ion-item>
+
+      <ion-item>
+          <ion-label floating>Gender</ion-label>
+          <ion-select [(ngModel)]="patient.gender">
+            <ion-option value="F">Female</ion-option>
+            <ion-option value="M">Male</ion-option>
+          </ion-select>
+      </ion-item>
+
+    </ion-list>
+
+    <button block ion-button (click)="addpatient(patient)" >Add!</button>
+
+</ion-content>
